@@ -15,8 +15,150 @@
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
     rel="stylesheet">
+
+  <style>
+    /* ── Typography override ── */
+    body {
+      font-family: 'Lato', sans-serif;
+      font-size: 17px;
+      line-height: 1.85;
+      color: #3a3a3a;
+      font-weight: 400;
+    }
+    h1, h2, h3, h4, h5, h6,
+    .hero-overlay-name,
+    .hero-overlay-title {
+      font-family: 'Playfair Display', serif;
+    }
+    p, li, a, label, small {
+      font-family: 'Lato', sans-serif;
+    }
+
+    /* ── Hero overlay text ── */
+    .hero-overlay-name {
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 0.3rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.55);
+    }
+    .hero-overlay-title {
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      font-weight: 400;
+      font-style: italic;
+      color: #f0e8dc;
+      letter-spacing: 0.02em;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.45);
+    }
+
+    /* ── Hero tagline + intro below image ── */
+    .hero-tagline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      font-weight: 600;
+      color: #3a3a3a;
+      margin-bottom: 1rem;
+    }
+    .hero-intro {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 720px;
+      margin: 0 auto 1.5rem;
+    }
+    /* ── Section headings ── */
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 600;
+    }
+    h3 { font-size: 1.3rem; font-weight: 600; }
+    h4 { font-size: 1.1rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+
+    /* ── How I Work image — constrained, no people cropping needed ── */
+    .how-i-work-img {
+      width: 100%;
+      max-height: 380px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 6px;
+    }
+
+    /* ── Nutrition section: side-by-side on desktop ── */
+    .nutrition-layout {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+    .nutrition-layout .nutrition-img-col {
+      flex: 0 0 340px;
+      max-width: 340px;
+    }
+    .nutrition-layout .nutrition-img-col img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .nutrition-layout .nutrition-text-col {
+      flex: 1;
+    }
+    @media (max-width: 768px) {
+      .nutrition-layout {
+        flex-direction: column;
+      }
+      .nutrition-layout .nutrition-img-col {
+        flex: unset;
+        max-width: 100%;
+      }
+      .nutrition-layout .nutrition-img-col img {
+        height: 260px;
+      }
+    }
+
+    /* ── Behaviour image — constrained ── */
+    .behaviour-img {
+      width: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 6px;
+    }
+
+    /* ── About Me — smaller image, white background, side layout ── */
+    .about-layout {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+    .about-img-col {
+      flex: 0 0 260px;
+      max-width: 260px;
+    }
+    .about-img-col img {
+      width: 100%;
+      border-radius: 6px;
+      background-color: #fff;
+    }
+    .about-text-col { flex: 1; }
+    @media (max-width: 768px) {
+      .about-layout { flex-direction: column; }
+      .about-img-col { flex: unset; max-width: 200px; }
+    }
+
+    /* ── Contact links — horizontal row ── */
+    .contact-links-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 2.5rem;
+      align-items: center;
+    }
+    .contact-links-row .info-item {
+      margin-bottom: 0 !important;
+    }
+  </style>
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -70,12 +212,24 @@
     ======================================================= -->
     <section id="hero" class="hero section dark-background">
       <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
-        <p class="hero-overlay-text">Hi, I'm Luciana Ferreira — Dog Nutrition &amp; Behaviour Consultant</p>
-        <h2>Something isn't right — but you can't quite put your finger on it.</h2>
-        <p>Whether your dog is struggling with their weight, dealing with skin or digestive issues, or showing signs of anxiety or reactivity — untangling what's really going on takes someone who understands both. I'm Luciana — a Registered Dietitian specialising in canine nutrition and behaviour, bringing the same clinical rigour I applied in human healthcare to every dog I work with.</p>
+        <!-- Overlaid on hero photo -->
+        <p class="hero-overlay-name">Hi, I'm Luciana Ferreira!</p>
+        <p class="hero-overlay-title">Dog Nutrition &amp; Behaviour Consultant</p>
         <a href="#how-i-work" class="btn-scroll" title="Scroll Down"><i class="bi bi-chevron-down"></i></a>
       </div>
     </section><!-- /Hero Section -->
+
+    <!-- Hero intro — below the photo -->
+    <section class="hero-intro-section py-5 light-background">
+      <div class="container text-center" data-aos="fade-up">
+        <h2 class="hero-tagline">Something isn't right — but you can't quite put your finger on it.</h2>
+        <p class="hero-intro">Whether your dog is struggling with their weight, dealing with skin or digestive issues, or showing signs of anxiety or reactivity — untangling what's really going on takes someone who understands both. I'm Luciana — a Registered Dietitian specialising in canine nutrition and behaviour, bringing the same clinical rigour I applied in human healthcare to every dog I work with.</p>
+        <div class="mt-4">
+          <a class="btn btn-secondary me-2" target="_blank" href="https://forms.gle/91Z5n46bp8vNAmEd9">Book a free discovery call</a>
+          <a class="btn btn-outline-secondary" target="_blank" href="https://form.paw-connection.co.uk">Book a consultation</a>
+        </div>
+      </div>
+    </section>
 
 
     <!-- ======================================================
@@ -85,7 +239,7 @@
       <div class="container section-title pb-4" data-aos="fade-up">
         <h2>How I Work</h2>
 
-        <img src="assets/img/how-i-work.jpg" class="img-fluid mb-4" alt="Luciana and Thor walking by the river">
+        <img src="assets/img/how-i-work.jpg" class="how-i-work-img mb-4" alt="Luciana and Thor walking by the river">
 
         <p class="pb-2">Every dog is different — so before we dive in, I offer a free discovery call. This helps us work out together where to focus and how I can best help you and your dog.</p>
 
@@ -116,31 +270,37 @@
     <section id="nutrition" class="services section">
       <div class="container section-title pb-1" data-aos="fade-up">
         <h2>Nutrition</h2>
+      </div>
+      <div class="container" data-aos="fade-up">
+        <div class="nutrition-layout">
+          <div class="nutrition-img-col">
+            <img src="assets/img/nutrition.png" alt="Dog eating">
+          </div>
+          <div class="nutrition-text-col">
+            <p class="pb-2">What your dog eats is the foundation for how they feel, move, and behave — not just their weight or energy, but their skin, digestion, mood, and how they cope with stress.</p>
 
-        <img src="assets/img/nutrition.png" class="img-fluid mb-4" alt="Dog eating">
+            <p class="pb-2">Here's something most people don't realise: your dog's gut and brain are in a constant conversation. When a dog is anxious — before a thunderstorm, during fireworks, after a stressful walk — that stress can show up in their gut too, sometimes as loose stools, a sensitive stomach, or digestive flare-ups. That works the other way around as well: a dog whose gut isn't healthy, who isn't absorbing nutrients properly, or who's quietly uncomfortable after every meal will struggle to feel calm, focused, or settled — no matter how much training you do.</p>
 
-        <p class="pb-2">What your dog eats is the foundation for how they feel, move, and behave — not just their weight or energy, but their skin, digestion, mood, and how they cope with stress.</p>
+            <p class="pb-3">Finding the right approach shouldn't mean trawling through contradictory advice online — from conflicting label claims to well-meaning but inconsistent forum advice. I'll help you work out what's actually right for your dog, whether that's choosing the right kibble, understanding if raw or homemade food suits them, managing a chronic condition, or simply knowing they're getting what they actually need.</p>
 
-        <p class="pb-2">Here's something most people don't realise: your dog's gut and brain are in a constant conversation. When a dog is anxious — before a thunderstorm, during fireworks, after a stressful walk — that stress can show up in their gut too, sometimes as loose stools, a sensitive stomach, or digestive flare-ups. That works the other way around as well: a dog whose gut isn't healthy, who isn't absorbing nutrients properly, or who's quietly uncomfortable after every meal will struggle to feel calm, focused, or settled — no matter how much training you do.</p>
+            <p><strong>A nutrition consultation can help with:</strong></p>
+            <ul class="mt-2 mb-4">
+              <li>Choosing the right diet for your dog's life stage and health</li>
+              <li>Which kibble to feed — and how to understand the label correctly</li>
+              <li>Understanding the real options and trade-offs between raw, homemade, or commercial feeding</li>
+              <li>Weight management</li>
+              <li>Digestive concerns — loose stools, diarrhoea, sensitive stomach</li>
+              <li>Itching skin and coat health</li>
+              <li>From puppies to senior dogs</li>
+            </ul>
 
-        <p class="pb-4">Finding the right approach shouldn't mean trawling through contradictory advice online — from conflicting label claims to well-meaning but inconsistent forum advice. I'll help you work out what's actually right for your dog, whether that's choosing the right kibble, understanding if raw or homemade food suits them, managing a chronic condition, or simply knowing they're getting what they actually need.</p>
-
-        <p><strong>A nutrition consultation can help with:</strong></p>
-        <ul class="mt-2 mb-4">
-          <li>Choosing the right diet for your dog's life stage and health</li>
-          <li>Which kibble to feed — and how to understand the label correctly</li>
-          <li>Understanding the real options and trade-offs between raw, homemade, or commercial feeding</li>
-          <li>Weight management</li>
-          <li>Digestive concerns — loose stools, diarrhoea, sensitive stomach</li>
-          <li>Itching skin and coat health</li>
-          <li>From puppies to senior dogs</li>
-        </ul>
-
-        <div class="d-flex flex-wrap gap-3">
-          <a class="btn btn-secondary" target="_blank" href="https://forms.gle/91Z5n46bp8vNAmEd9">Book a free discovery call</a>
-          <a class="btn btn-outline-secondary" target="_blank" href="https://form.paw-connection.co.uk">Book a consultation</a>
+            <div class="d-flex flex-wrap gap-3">
+              <a class="btn btn-secondary" target="_blank" href="https://forms.gle/91Z5n46bp8vNAmEd9">Book a free discovery call</a>
+              <a class="btn btn-outline-secondary" target="_blank" href="https://form.paw-connection.co.uk">Book a consultation</a>
+            </div>
+            <p class="mt-2 text-muted"><small><em>Not sure where to start? The discovery call is the place.</em></small></p>
+          </div>
         </div>
-        <p class="mt-2 text-muted"><small><em>Not sure where to start? The discovery call is the place.</em></small></p>
       </div>
     </section><!-- /Nutrition Section -->
 
@@ -152,7 +312,7 @@
       <div class="container section-title pb-4" data-aos="fade-up">
         <h2>Behaviour</h2>
 
-        <img src="assets/img/behaviour.jpg" class="img-fluid mb-4" alt="Dog on a walk with owner">
+        <img src="assets/img/behaviour.jpg" class="behaviour-img mb-4" alt="Dog on a walk with owner">
 
         <p class="pb-2">Sometimes a dog's behaviour makes complete sense once you understand what's driving it — what they've learned, what's happening in their environment, their breed instincts, and how they're feeling physically. A dog who destroys the house when left alone, lunges at other dogs, or can't settle as a puppy is communicating something, even if it doesn't feel that way at the moment.</p>
 
@@ -246,10 +406,15 @@
          SECTION 6 — ABOUT ME
     ======================================================= -->
     <section id="about" class="about section light-background">
-      <div class="container section-title pb-4" data-aos="fade-up">
+      <div class="container section-title pb-2" data-aos="fade-up">
         <h2>About Me</h2>
-
-        <img src="assets/img/about.png" class="img-fluid mb-4" alt="Luciana Ferreira">
+      </div>
+      <div class="container" data-aos="fade-up">
+        <div class="about-layout">
+          <div class="about-img-col">
+            <img src="assets/img/about.png" alt="Luciana Ferreira" style="background-color:#fff;">
+          </div>
+          <div class="about-text-col">
 
         <p class="pb-2">I'm Luciana — a Registered Dietitian specialising in canine nutrition and behaviour. Before extending my practice to dogs, I worked in human clinical nutrition — a field that demands precision, evidence, and the ability to translate complex science into practical, personalised plans. That foundation is what I bring to every dog I work with.</p>
 
@@ -275,9 +440,11 @@
         </ul>
 
         <div class="pt-2">
-          <img src="assets/img/fdm-logo.png" alt="Family Dog Mediation logo" class="img-fluid"/>
+          <img src="assets/img/fdm-logo.png" alt="Family Dog Mediation logo" class="img-fluid" style="max-width:180px;"/>
         </div>
-      </div>
+          </div><!-- /about-text-col -->
+        </div><!-- /about-layout -->
+      </div><!-- /container -->
     </section><!-- /About Section -->
 
 
@@ -320,14 +487,13 @@
           <div class="col-lg-4">
 
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <a href="mailto:llestinge@gmail.com?subject=Contact about my dog">
+              <a href="mailto:luciana@paw-connection.co.uk?subject=Contact about my dog">
                 <i class="bi bi-envelope flex-shrink-0"></i>
               </a>
               <div>
-                <a href="mailto:llestinge@gmail.com?subject=Contact about my dog">
+                <a href="mailto:luciana@paw-connection.co.uk?subject=Contact about my dog">
                   <h3>Email</h3>
                 </a>
-                <p>llestinge@gmail.com</p>
               </div>
             </div><!-- End Info Item -->
 
@@ -374,7 +540,7 @@
         <a target="_blank" href="https://www.facebook.com/profile.php?id=61560968492543"><i class="bi bi-facebook"></i></a>
         <a target="_blank" href="https://www.instagram.com/luciana.ferreira.dog/"><i class="bi bi-instagram"></i></a>
         <a target="_blank" href="https://wa.me/qr/STOUUNLDCRZQJ1"><i class="bi bi-whatsapp"></i></a>
-        <a target="_blank" href="mailto:llestinge@gmail.com?subject=Contact about my dog"><i class="bi bi-envelope"></i></a>
+        <a target="_blank" href="mailto:luciana@paw-connection.co.uk?subject=Contact about my dog"><i class="bi bi-envelope"></i></a>
       </div>
       <div class="container">
         <div class="copyright">
