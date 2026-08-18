@@ -448,6 +448,216 @@
       </div><!-- /container -->
     </section><!-- /About Section -->
 
+    <section class="pc-latest">
+      <style>
+        .pc-latest {
+          width: 100%;
+          padding: 72px 24px;
+          background: #f7f9fb;
+          box-sizing: border-box;
+        }
+        .pc-latest__inner {
+          max-width: 1080px;
+          margin: 0 auto;
+        }
+        .pc-latest__header {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 12px;
+          margin-bottom: 40px;
+          padding-bottom: 20px;
+          border-bottom: 2px solid #2c3e50;
+        }
+        .pc-latest__heading {
+          font-family: Georgia, 'Times New Roman', serif;
+          font-size: 2rem;
+          color: #2c3e50;
+          margin: 0;
+          font-weight: 700;
+          letter-spacing: -0.01em;
+        }
+        .pc-latest__viewall {
+          font-family: 'Segoe UI', Arial, sans-serif;
+          font-size: 0.9rem;
+          font-weight: 600;
+          color: #5d7285;
+          text-decoration: none;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          border-bottom: 1px solid #7f9cb5;
+          padding-bottom: 2px;
+          transition: color 0.15s, border-color 0.15s;
+        }
+        .pc-latest__viewall:hover {
+          color: #2c3e50;
+          border-color: #2c3e50;
+        }
+        .pc-latest__grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 28px;
+        }
+        .pc-latest__card {
+          display: flex;
+          flex-direction: column;
+          background: #ffffff;
+          border-radius: 10px;
+          overflow: hidden;
+          text-decoration: none;
+          color: inherit;
+          border: 1px solid #e1e6ea;
+          transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+        .pc-latest__card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 32px rgba(44, 62, 80, 0.12);
+        }
+        .pc-latest__img-wrap {
+          width: 100%;
+          aspect-ratio: 16/9;
+          overflow: hidden;
+          background: #e1e6ea;
+        }
+        .pc-latest__img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: transform 0.3s ease;
+        }
+        .pc-latest__card:hover .pc-latest__img {
+          transform: scale(1.03);
+        }
+        .pc-latest__body {
+          padding: 22px 24px 28px;
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+        }
+        .pc-latest__date {
+          font-family: 'Segoe UI', Arial, sans-serif;
+          font-size: 0.75rem;
+          text-transform: uppercase;
+          letter-spacing: 0.07em;
+          color: #7f9cb5;
+          margin-bottom: 10px;
+        }
+        .pc-latest__title {
+          font-family: Georgia, 'Times New Roman', serif;
+          font-size: 1.15rem;
+          color: #2c3e50;
+          margin: 0 0 12px;
+          line-height: 1.4;
+          font-weight: 700;
+        }
+        .pc-latest__excerpt {
+          font-family: 'Segoe UI', Arial, sans-serif;
+          font-size: 0.92rem;
+          color: #333e48;
+          line-height: 1.65;
+          margin: 0 0 20px;
+          flex: 1;
+        }
+        .pc-latest__readmore {
+          font-family: 'Segoe UI', Arial, sans-serif;
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: #5d7285;
+          letter-spacing: 0.02em;
+        }
+        @media (max-width: 860px) {
+          .pc-latest__grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 540px) {
+          .pc-latest__grid { grid-template-columns: 1fr; }
+          .pc-latest__heading { font-size: 1.6rem; }
+        }
+      </style>
+
+      <div class="pc-latest__inner">
+        <div class="pc-latest__header">
+          <h2 class="pc-latest__heading">From the Blog</h2>
+          <a href="blog/index.html" class="pc-latest__viewall">View all posts &rarr;</a>
+        </div>
+
+        <div class="pc-latest__grid">
+          <a href="blog/beyond-the-food-bowl-how-holidays-affect-your-dog-s-body-and-behaviour.html" class="pc-latest__card">
+            <div class="pc-latest__img-wrap">
+              <img src="blog/images/beyond-the-food-bowl-how-holidays-affect-your-dog-s-body-and-behaviour.jpg" alt="Beyond the Food Bowl: How Holidays Affect Your Dog&#x27;s Body and Behaviour" class="pc-latest__img">
+            </div>
+            <div class="pc-latest__body">
+              <span class="pc-latest__date">6 Aug 2026</span>
+              <h3 class="pc-latest__title">Beyond the Food Bowl: How Holidays Affect Your Dog&#x27;s Body and Behaviour</h3>
+              <p class="pc-latest__excerpt">Even small changes in daily life during the holidays can add up — and dogs&#x27; bodies and emotions notice those changes more than we realise.</p>
+              <span class="pc-latest__readmore">Read more &rarr;</span>
+            </div>
+          </a>
+          <a href="blog/before-the-next-heatwave-how-heat-can-affect-your-dog-s-digestion-and.html" class="pc-latest__card">
+            <div class="pc-latest__img-wrap">
+              <img src="blog/images/before-the-next-heatwave-how-heat-can-affect-your-dog-s-digestion-and.png" alt="Before the Next Heatwave: How Heat Can Affect Your Dog’s Digestion and Behaviour" class="pc-latest__img">
+            </div>
+            <div class="pc-latest__body">
+              <span class="pc-latest__date">23 Jul 2026</span>
+              <h3 class="pc-latest__title">Before the Next Heatwave: How Heat Can Affect Your Dog’s Digestion and Behaviour</h3>
+              <p class="pc-latest__excerpt">  Most dog owners know that hot weather can make dogs pant more or look for a shady spot to rest. But fewer realise that heat can also affect…</p>
+              <span class="pc-latest__readmore">Read more &rarr;</span>
+            </div>
+          </a>
+          <a href="blog/it-s-not-a-recall-problem-why-your-dog-can-t-listen-to-you.html" class="pc-latest__card">
+            <div class="pc-latest__img-wrap">
+              <img src="blog/images/it-s-not-a-recall-problem-why-your-dog-can-t-listen-to-you.png" alt="It’s Not a Recall Problem – Why Your Dog Can’t Listen to You" class="pc-latest__img">
+            </div>
+            <div class="pc-latest__body">
+              <span class="pc-latest__date">24 Oct 2025</span>
+              <h3 class="pc-latest__title">It’s Not a Recall Problem – Why Your Dog Can’t Listen to You</h3>
+              <p class="pc-latest__excerpt">  Your Retriever has endless energy and doesn’t seem to listen. Your Spaniel ignores you completely the moment their nose hits the ground. You’ve…</p>
+              <span class="pc-latest__readmore">Read more &rarr;</span>
+            </div>
+          </a>
+      </div>
+            <div class="pc-latest__body">
+              <span class="pc-latest__date">23 Jul 2026</span>
+              <h3 class="pc-latest__title">Before the Next Heatwave: How Heat Can Affect Your Dog's Digestion and Behaviour</h3>
+              <p class="pc-latest__excerpt">Summer heat does more than make your dog tired — it can quietly disrupt digestion and trigger behaviour changes that are easy to miss until they escalate.</p>
+              <span class="pc-latest__readmore">Read more &rarr;</span>
+            </div>
+          </a>
+
+          <!-- CARD 2 -->
+          <a href="blog/it-s-not-a-recall-problem-why-your-dog-can-t-listen-to-you.html" class="pc-latest__card">
+            <div class="pc-latest__img-wrap">
+              <img src="blog/images/it-s-not-a-recall-problem-why-your-dog-can-t-listen-to-you.png"
+                  alt="It's Not a Recall Problem"
+                  class="pc-latest__img">
+            </div>
+            <div class="pc-latest__body">
+              <span class="pc-latest__date">24 Oct 2025</span>
+              <h3 class="pc-latest__title">It's Not a Recall Problem – Why Your Dog Can't Listen to You</h3>
+              <p class="pc-latest__excerpt">If your dog ignores you outside, the problem probably isn't their recall — it's something deeper about how they experience the world around them.</p>
+              <span class="pc-latest__readmore">Read more &rarr;</span>
+            </div>
+          </a>
+
+          <!-- CARD 3 -->
+          <a href="blog/your-dog-s-breed-is-talking-are-you-listening.html" class="pc-latest__card">
+            <div class="pc-latest__img-wrap">
+              <img src="blog/images/your-dog-s-breed-is-talking-are-you-listening.png"
+                  alt="Your Dog's Breed Is Talking"
+                  class="pc-latest__img">
+            </div>
+            <div class="pc-latest__body">
+              <span class="pc-latest__date">9 Sep 2025</span>
+              <h3 class="pc-latest__title">Your Dog's Breed Is Talking — Are You Listening?</h3>
+              <p class="pc-latest__excerpt">Breed isn't just about looks — it shapes how your dog thinks, reacts, and what they need from you every single day.</p>
+              <span class="pc-latest__readmore">Read more &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
 
     <!-- ======================================================
          SECTION 7 — THOR
