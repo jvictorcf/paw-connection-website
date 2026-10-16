@@ -474,3 +474,54 @@ h1 {
   margin-top: -20px;
   margin-bottom: 32px;
 }
+
+/* ============================================
+   SUBSCRIBE BLOCK
+============================================ */
+
+.post-subscribe {
+  border-top: 2px solid var(--pc-border);
+  border-bottom: 2px solid var(--pc-border);
+  padding: 36px 24px;
+  margin: 40px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-subscribe p {
+  color: var(--pc-text-light);
+  font-size: 0.95rem;
+  margin: 0 0 20px;
+  max-width: 460px;
+  line-height: 1.65;
+}
+
+.post-subscribe-heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--pc-navy);
+  font-size: 1.25rem;
+  margin: 0 0 10px !important;
+  font-weight: 700;
+}
+
+.post-subscribe-link {
+  display: inline-block;
+  background: var(--pc-accent);
+  border: 2px solid var(--pc-accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 32px;
+  border-radius: 5px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  letter-spacing: 0.03em;
+}
+
+.post-subscribe-link:hover {
+  background: var(--pc-blue-gray);
+  border-color: var(--pc-blue-gray);
+  color: #ffffff;
+}
