@@ -32,7 +32,8 @@ a { text-decoration: none; }
 
 .post-breadcrumb {
   max-width: 760px;
-  padding: 24px 0 0;
+  margin: 0 auto;
+  padding: 24px 24px 0;
   display: flex;
   gap: 24px;
 
@@ -524,4 +525,54 @@ h1 {
   background: var(--pc-blue-gray);
   border-color: var(--pc-blue-gray);
   color: #ffffff;
+}
+
+/* Portrait photos: keep tall images a sensible size, centred */
+.post-content img.post-inline-image-portrait {
+  width: auto;
+  max-width: 100%;
+  max-height: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================
+   BUTTON TEXT FIXES
+   (article link style was overriding button colours;
+    these higher-specificity rules win)
+============================================ */
+
+.post-content a.post-cta-link,
+.post-content a.post-cta-link:visited {
+  color: #ffffff;
+  text-decoration: none;
+  background: #2c3e50;
+}
+.post-content a.post-cta-link:hover,
+.post-content a.post-cta-link:focus {
+  color: #ffffff;
+  background: #5d7285;
+  text-decoration: none;
+}
+
+.post-content a.post-subscribe-link,
+.post-content a.post-subscribe-link:visited {
+  color: #ffffff;
+  text-decoration: none;
+  background: #5d7285;
+  border-color: #5d7285;
+}
+.post-content a.post-subscribe-link:hover,
+.post-content a.post-subscribe-link:focus {
+  color: #ffffff;
+  background: #2c3e50;
+  border-color: #2c3e50;
+  text-decoration: none;
+}
+
+.post-content .post-subscribe .post-subscribe-heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #2c3e50;
+  font-size: 1.3rem;
+  font-weight: 700;
 }
